@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <HEAD>
+        <meta charset="UTF-8">
+    <title>QUIZ CHALLENGE</title>
+    <link rel="stylesheet" href="style.css">
+    </HEAD><
+<body>
+    <div class="container">
+    <h1>WELCOME TO HTML QUIZ CHALLENGE</h1>
+    <div class="question">
+        <h2>1.What is meant by HTML?</h2>
+        <input type="radio" name="1" value="HYPER TEXT MARKUP LANGUAGE">HYPER TEXT MARKUP LANGUAGE<br>
+        <input type="radio"name="1" value="HIGH TEXT MAKE LANGUAGE">HIGH TEXT MAKE LANGUAGE<br>
+    </div>
+    <div class="question">
+        <h3>2. list the type of css?</h3>
+        <input type="radio" name="2" value="5">5<br>
+        <input type="radio" name="2" value="3">3<br>
+    </div>
+    <div class="question">
+        <h4>3. CSS should be written in?</h4>
+        <input type="radio" name="3" value="script tag">script tag<br>                                                                                                
+        <input type="radio" name="3" value="style tag">style tag<br>
+    </div>
+<button onclick="checkanswers()">SUBMIT</button>
+<div id="result"></div>
+</div>
+<script>
+    function checkanswers() {
+        const answer={
+            1: "HYPER TEXT MARKUP LANGUAGE",
+            2: "3",
+            3: "style tag"
+        };
+        let score=0;
+        for(let key in answer){
+          const selected = document.querySelector(`input[name="${key}"]:checked`);
+      if (selected && selected.value === answer[key]) {
+        score++;
+        }
+    }
+         document.getElementById("result").innerText =` You scored ${score} out of ${Object.keys(answer).length}`;
+}
+</script>
+</body>
+</html>
